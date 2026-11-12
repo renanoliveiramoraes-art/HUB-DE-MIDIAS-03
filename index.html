@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Mídias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hub de Mídias</h1>
+        <p>Gerenciador de Jogos, Filmes e Séries</p>
+    </header>
+    <main class="container">
+
+        <section class="painel-cadastro">
+            <h2>Adicionar à Lista de Mídias</h2>
+
+            <form id="form-midia">
+                <input type="text" id="titulo" placeholder="Ex: Valorant" required>
+                <select id="categoria" required>
+                    <option value="Categoria" disabled selected>Categoria</option>
+                    <option value="Jogo">Jogos</option>
+                    <option value="Filme">Filmes</option>
+                    <option value="Série">Séries</option>
+                </select>
+                <input type="text" id="plataforma" placeholder="Ex: Netflix, PC" required>
+                <input type="number" id="nota" step="0.1" min="0" max="10" placeholder="Ex: 0 a 10.0" required>
+                <input type="url" id="capa" placeholder="URL da imagem (ex: https://site.com/imagem.jpg)">
+                <textarea id="descricao" placeholder="Digite uma breve descrição..." style="width: 100%; margin-top: 10px; background: #0f172a; color: white; border: 1px solid #475569; padding: 10px; border-radius: 6px;"></textarea>
+                <button type="submit" class="btn-salvar" style="margin-top: 10px;">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="painel-catalogo">
+            <div class="filtros">
+                <button>Todos</button>
+                <button>Jogos</button>
+                <button>Filmes</button>
+                <button>Séries</button>
+            </div>
+            <div id="catalogo-grid" class="grid">
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para exibir a descrição -->
+    <div id="modal-descricao" class="modal hidden">
+        <div class="modal-conteudo">
+            <span id="btn-fechar-modal" class="fechar">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
